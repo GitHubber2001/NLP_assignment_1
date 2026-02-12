@@ -1,0 +1,11 @@
+Repo NLP assignment 1:
+https://github.com/GitHubber2001/NLP_assignment_1
+
+Brightspace NLP assignments instructions slides:
+https://brightspace.rug.nl/d2l/le/lessons/457345/topics/5510847
+
+Brightspace NLP group 3 assignment 1:
+https://brightspace.rug.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=144635&grpid=529775&isprv=0&bp=0&ou=457345
+
+Dataset link NLP assignment 1:
+huggingface.co/datasets/sh0416/ag_new
