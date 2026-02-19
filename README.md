@@ -13,7 +13,7 @@ AG News:
 Assignment group 3
 - Kevin Kuipers (s5051150)
 - Federico Berdugo Morales (s5363268)
-- Nik Skouf (sxxxxxxx)
+- Nik Skouf (s5617804)
 
 # Command to reproduce main results
 ```console
