@@ -1,16 +1,22 @@
 """
 Kevin Kuipers (s5051150)
-Federico Berdugo Morales (sxxxxxxx)
+Federico Berdugo Morales (s5363268)
 Nik Skouf (sxxxxxxx)
 """
+
+import random
 
 import numpy as np
 import pandas as pd
 
-# fixed random seed
-np.random.seed(42)
+import preprocessing
+import model_training
 
-test_df = pd.read_json("test.jsonl", lines=True)
+# fixed random seed
+RANDOM_SEED = 42
+np.random.seed(RANDOM_SEED)
+random.seed(RANDOM_SEED)
+
 
 # github changed the big file
 # train_df = pd.read_json("train.jsonl", lines=True)
