@@ -16,6 +16,9 @@ Assignment group 3
 - Nik Skouf (sxxxxxxx)
 
 # Command to reproduce main results
+```console
 python main.py
+```
+
 
 
