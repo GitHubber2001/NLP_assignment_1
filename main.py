@@ -9,17 +9,13 @@ import random
 import numpy as np
 import pandas as pd
 
-import preprocessing
 import model_training
+import preprocessing
 
 # fixed random seed
 RANDOM_SEED = 42
 np.random.seed(RANDOM_SEED)
 random.seed(RANDOM_SEED)
-
-
-# github changed the big file
-# train_df = pd.read_json("train.jsonl", lines=True)
 
 
 def normalize_text(text: str) -> str:
@@ -29,7 +25,13 @@ def normalize_text(text: str) -> str:
 
 
 def main() -> None:
-    pass
+    train, dev, test = preprocessing.preprocessing(RANDOM_SEED)
+    train_x, train_y, dev_x, dev_y, test_x, test_y = (
+        preprocessing.tfidf_generator(train, dev, test)
+    )
+    print(train_x, train_y)
+    print(dev_x, dev_y)
+    print(test_x, test_y)
 
 
 if __name__ == "__main__":
