@@ -10,7 +10,7 @@ AG News:
 - Version: Version 3, Updated 09/09/2015
 
 # Team
-Assigement group 3
+Assignment group 3
 - Kevin Kuipers (s5051150)
 - Federico Berdugo Morales (s5363268)
 - Nik Skouf (sxxxxxxx)
