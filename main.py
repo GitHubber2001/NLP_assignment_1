@@ -18,12 +18,6 @@ np.random.seed(RANDOM_SEED)
 random.seed(RANDOM_SEED)
 
 
-def normalize_text(text: str) -> str:
-    """Return the normalized version of a text"""
-
-    return text.lower()
-
-
 def main() -> None:
     train, dev, test = preprocessing.preprocessing(RANDOM_SEED)
     train_x, train_y, dev_x, dev_y, test_x, test_y = (
