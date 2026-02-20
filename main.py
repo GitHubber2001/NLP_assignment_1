@@ -1,7 +1,7 @@
 """
 Kevin Kuipers (s5051150)
 Federico Berdugo Morales (s5363268)
-Nik Skouf (sxxxxxxx)
+Nik Skouf (s5617804)
 """
 
 import random
@@ -20,9 +20,10 @@ random.seed(RANDOM_SEED)
 
 def main() -> None:
     train, dev, test = preprocessing.preprocessing(RANDOM_SEED)
-    train_x, train_y, dev_x, dev_y, test_x, test_y = (
-        preprocessing.tfidf_generator(train, dev, test)
+    train_x, train_y, dev_x, dev_y, test_x, test_y = preprocessing.tfidf_generator(
+        train, dev, test
     )
+
     print(train_x, train_y)
     print(dev_x, dev_y)
     print(test_x, test_y)
