@@ -5,6 +5,7 @@ description = "pyproject.toml file for NLP assignment 1"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "matplotlib>=3.10.8",
     "numpy>=2.3.3",
     "pandas>=3.0.0",
     "scikit-learn>=1.8.0",
