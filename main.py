@@ -5,9 +5,12 @@ Nik Skouf (s5617804)
 """
 
 import random
+import time
 
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
 
 import model_training
 import preprocessing
@@ -18,15 +21,44 @@ np.random.seed(RANDOM_SEED)
 random.seed(RANDOM_SEED)
 
 
+MAX_ITERATIONS = 50000
+
+
 def main() -> None:
+    starting_time = time.time()
     train, dev, test = preprocessing.preprocessing(RANDOM_SEED)
-    train_x, train_y, dev_x, dev_y, test_x, test_y = preprocessing.tfidf_generator(
-        train, dev, test
+    preprocessing_time = time.time() - starting_time
+    print(f"Preprocessing took {preprocessing_time}s")
+
+    starting_time = time.time()
+    train_x, train_y, dev_x, dev_y, test_x, test_y = (
+        preprocessing.tfidf_generator(train, dev, test)
+    )
+    vector_time = time.time() - starting_time
+    print(f"Generating vectors took {vector_time}s")
+
+    starting_time = time.time()
+
+    logistic_regression = LogisticRegression(
+        max_iter=MAX_ITERATIONS, random_state=RANDOM_SEED
     )
 
-    print(train_x, train_y)
-    print(dev_x, dev_y)
-    print(test_x, test_y)
+    logistic_regression.fit(train_x, train_y)
+    dev_prediction_regression = logistic_regression.predict(dev_x)
+    test_prediction_regression = logistic_regression.predict(test_x)
+
+    regression_time = time.time() - starting_time
+    print(f"Logistic regression took {regression_time}s")
+
+    starting_time = time.time()
+    svm = LinearSVC()
+
+    svm.fit(train_x, train_y)
+
+    dev_prediction_svm = svm.predict(dev_x)
+    test_prediction_svm = svm.predict(test_x)
+    svm_time = time.time() - starting_time
+    print(f"SVM took {svm_time}s")
 
 
 if __name__ == "__main__":
