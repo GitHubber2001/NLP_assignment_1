@@ -11,15 +11,13 @@ def show_key_metrics(test_y, test_prediction, model_name: str) -> None:
     target_names = ["label", "title", "description"]
     labels = [0, 1, 2, 3]
 
-    report = classification_report(
-        test_y, test_prediction, labels=labels, target_names=target_names
-    )
+    report = classification_report(test_y, test_prediction)
 
     cm = confusion_matrix(test_y, test_prediction)
     confusion_matrix_display_regression = ConfusionMatrixDisplay(
-        confusion_matrix=cm, display_labels=labels
+        confusion_matrix=cm
     )
-
+    confusion_matrix_display_regression.plot()
     accuracy_classification_score = accuracy_score(
         test_y, test_prediction, normalize=True
     )
